@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4932C6881F5871E40041C711 /* key.json in Resources */ = {isa = PBXBuildFile; fileRef = 4932C6871F5871E40041C711 /* key.json */; };
 		49999FD41F57BC2800B8C28F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49999FD31F57BC2800B8C28F /* main.m */; };
 		49999FD71F57BC2800B8C28F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49999FD61F57BC2800B8C28F /* AppDelegate.m */; };
 		49999FDA1F57BC2800B8C28F /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49999FD91F57BC2800B8C28F /* MasterViewController.m */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4932C6871F5871E40041C711 /* key.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = key.json; sourceTree = "<group>"; };
 		49999FCF1F57BC2800B8C28F /* Gemini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gemini.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49999FD31F57BC2800B8C28F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		49999FD51F57BC2800B8C28F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			children = (
 				49999FD51F57BC2800B8C28F /* AppDelegate.h */,
 				49999FD61F57BC2800B8C28F /* AppDelegate.m */,
+				4932C6871F5871E40041C711 /* key.json */,
 				49999FD81F57BC2800B8C28F /* MasterViewController.h */,
 				49999FD91F57BC2800B8C28F /* MasterViewController.m */,
 				49999FDB1F57BC2800B8C28F /* DetailViewController.h */,
@@ -255,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49999FE51F57BC2800B8C28F /* LaunchScreen.storyboard in Resources */,
+				4932C6881F5871E40041C711 /* key.json in Resources */,
 				49999FE21F57BC2800B8C28F /* Assets.xcassets in Resources */,
 				49999FE01F57BC2800B8C28F /* Main.storyboard in Resources */,
 			);
@@ -522,6 +526,7 @@
 				4999A0011F57BC2800B8C28F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4999A0021F57BC2800B8C28F /* Build configuration list for PBXNativeTarget "GeminiTests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +535,7 @@
 				4999A0041F57BC2800B8C28F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4999A0051F57BC2800B8C28F /* Build configuration list for PBXNativeTarget "GeminiUITests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +544,7 @@
 				4999A0071F57BC2800B8C28F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

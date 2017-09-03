@@ -195,17 +195,30 @@ float ethereumAmount = 0.;
     [self updateTableView];
 }
 
+- (NSString*)getLabelForIndex:(NSInteger)index {
+    switch (index) {
+        case 0:
+            return @"Bitcoin:";
+        case 1:
+            return @"Ethereum:";
+        case 2:
+            return @"Cash:";
+        default:
+            return @"Unknown:";
+    }
+}
 
 #pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = self.objects[indexPath.row];
+        NSString *object = self.objects[indexPath.row];
         DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
         [controller setDetailItem:object];
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
+        controller.navigationItem.title = [self getLabelForIndex:indexPath.row];
     }
 }
 
@@ -224,24 +237,8 @@ float ethereumAmount = 0.;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
-    NSDate *object = self.objects[indexPath.row];
-    NSString *currencyLabel;
-    switch (indexPath.row) {
-        case 0:
-            currencyLabel = @"Bitcoin:";
-            break;
-        case 1:
-            currencyLabel = @"Ethereum:";
-            break;
-        case 2:
-            currencyLabel = @"Cash:";
-            break;
-        default:
-            currencyLabel = @"Unknown:";
-            break;
-    }
-    cell.textLabel.text = currencyLabel;
+    NSString *object = self.objects[indexPath.row];
+    cell.textLabel.text = [self getLabelForIndex:indexPath.row];;
     cell.detailTextLabel.text = [object description];
     return cell;
 }

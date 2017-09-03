@@ -198,9 +198,29 @@ float ethereumAmount = 0.;
     [self.tableView reloadRowsAtIndexPaths:indexPathArray withRowAnimation:UITableViewRowAnimationMiddle];
 }
 
+- (void)setUpdatedTime {
+    // get date string
+    NSDate *now = [NSDate date];
+    NSString *dateStr = [NSDateFormatter localizedStringFromDate:now dateStyle:NSDateFormatterNoStyle timeStyle:NSDateFormatterMediumStyle];
+    NSString *updateStr = @"Last updated at ";
+    NSString *totalStr = [updateStr stringByAppendingString:dateStr];
+    
+    // assign to toolbar
+    UILabel *toolbarLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    toolbarLabel.text = totalStr;
+    [toolbarLabel sizeToFit];
+    toolbarLabel.backgroundColor = [UIColor clearColor];
+    toolbarLabel.textColor = [UIColor grayColor];
+    toolbarLabel.textAlignment = NSTextAlignmentCenter;
+    UIBarButtonItem *labelItem = [[UIBarButtonItem alloc] initWithCustomView:toolbarLabel];
+    UIBarButtonItem *flexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    [self setToolbarItems:@[flexible, labelItem, flexible] animated:false];
+}
+
 - (void)refresh:(id)sender {
     [self updatePrices];
     [self updateTableView];
+    [self setUpdatedTime];
     [self.refreshControl endRefreshing];
 }
 

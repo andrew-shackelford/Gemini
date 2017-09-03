@@ -582,6 +582,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HGZ47EU989;
 				INFOPLIST_FILE = Gemini/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.goldendogproductions.Gemini;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -594,6 +595,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HGZ47EU989;
 				INFOPLIST_FILE = Gemini/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.goldendogproductions.Gemini;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -660,6 +662,7 @@
 				49310FF31F5C7086006878E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49999FCA1F57BC2800B8C28F /* Build configuration list for PBXProject "Gemini" */ = {
 			isa = XCConfigurationList;

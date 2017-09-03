@@ -25,8 +25,16 @@ float ethereumAmount = 0.;
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
+    // create refresh control
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.tableView.refreshControl = self.refreshControl;
+    [self.refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    [self.refreshControl setAttributedTitle:[[NSAttributedString alloc] initWithString:@"Fetching Price Data..." attributes:nil]];
+    
+    // create refresh button
     UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
     self.navigationItem.rightBarButtonItem = refreshButton;
+    
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     [self refresh:self];
 }
@@ -193,6 +201,7 @@ float ethereumAmount = 0.;
 - (void)refresh:(id)sender {
     [self updatePrices];
     [self updateTableView];
+    [self.refreshControl endRefreshing];
 }
 
 - (NSString*)getLabelForIndex:(NSInteger)index {

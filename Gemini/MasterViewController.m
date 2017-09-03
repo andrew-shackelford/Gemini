@@ -28,6 +28,13 @@ float ethereumAmount = 0.;
     UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
     self.navigationItem.rightBarButtonItem = refreshButton;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    [self refresh:self];
+}
+
+- (void)updateTableView {
+    [self insertPriceObject:bitcoinAmount atIndex:0];
+    [self insertPriceObject:ethereumAmount atIndex:1];
+    [self insertPriceObject:cashAmount atIndex:2];
 }
 
 - (NSDictionary*)getPortfolio {
@@ -155,7 +162,6 @@ float ethereumAmount = 0.;
 - (void)viewWillAppear:(BOOL)animated {
     self.clearsSelectionOnViewWillAppear = self.splitViewController.isCollapsed;
     [super viewWillAppear:animated];
-    [self updatePrices];
 }
 
 
@@ -163,7 +169,6 @@ float ethereumAmount = 0.;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 - (void)insertNewObject:(id)sender {
     if (!self.objects) {
@@ -174,8 +179,20 @@ float ethereumAmount = 0.;
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
+- (void)insertPriceObject:(float)price atIndex:(int)index {
+    if (!self.objects) {
+        self.objects = [[NSMutableArray alloc] init];
+    }
+    [self.objects insertObject:[NSString stringWithFormat:@"$%.2f", price] atIndex:index];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+
+
 - (void)refresh:(id)sender {
     [self updatePrices];
+    [self updateTableView];
 }
 
 

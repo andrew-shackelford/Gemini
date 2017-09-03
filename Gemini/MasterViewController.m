@@ -31,10 +31,19 @@ float ethereumAmount = 0.;
     [self refresh:self];
 }
 
+
+
 - (void)updateTableView {
-    [self insertPriceObject:bitcoinAmount atIndex:0];
-    [self insertPriceObject:ethereumAmount atIndex:1];
-    [self insertPriceObject:cashAmount atIndex:2];
+    if (!self.objects) {
+        self.objects = [[NSMutableArray alloc] init];
+        [self insertPriceObject:bitcoinAmount atIndex:0];
+        [self insertPriceObject:ethereumAmount atIndex:1];
+        [self insertPriceObject:cashAmount atIndex:2];
+    } else {
+        [self updatePriceObject:bitcoinAmount atIndex:0];
+        [self updatePriceObject:ethereumAmount atIndex:1];
+        [self updatePriceObject:cashAmount atIndex:2];
+    }
 }
 
 - (NSDictionary*)getPortfolio {
@@ -170,25 +179,18 @@ float ethereumAmount = 0.;
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender {
-    if (!self.objects) {
-        self.objects = [[NSMutableArray alloc] init];
-    }
-    [self.objects insertObject:@"hi" atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-}
-
 - (void)insertPriceObject:(float)price atIndex:(int)index {
-    if (!self.objects) {
-        self.objects = [[NSMutableArray alloc] init];
-    }
     [self.objects insertObject:[NSString stringWithFormat:@"$%.2f", price] atIndex:index];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
-
+- (void)updatePriceObject:(float)price atIndex:(int)index {
+    [self.objects setObject:[NSString stringWithFormat:@"$%.2f", price] atIndexedSubscript:index];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+    NSArray *indexPathArray = [NSArray arrayWithObjects:indexPath, nil];
+    [self.tableView reloadRowsAtIndexPaths:indexPathArray withRowAnimation:UITableViewRowAnimationMiddle];
+}
 
 - (void)refresh:(id)sender {
     [self updatePrices];

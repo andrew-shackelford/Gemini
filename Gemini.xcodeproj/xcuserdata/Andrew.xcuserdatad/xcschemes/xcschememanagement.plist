@@ -9,9 +9,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>PriceTracker.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>49310FE21F5C7086006878E6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>49999FCE1F57BC2800B8C28F</key>
 		<dict>
 			<key>primary</key>

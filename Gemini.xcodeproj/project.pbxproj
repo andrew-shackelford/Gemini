@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49310FE61F5C7086006878E6 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49310FE51F5C7086006878E6 /* NotificationCenter.framework */; };
+		49310FEA1F5C7086006878E6 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49310FE91F5C7086006878E6 /* TodayViewController.m */; };
+		49310FED1F5C7086006878E6 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49310FEB1F5C7086006878E6 /* MainInterface.storyboard */; };
+		49310FF11F5C7086006878E6 /* PriceTracker.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 49310FE31F5C7086006878E6 /* PriceTracker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4932C6881F5871E40041C711 /* key.json in Resources */ = {isa = PBXBuildFile; fileRef = 4932C6871F5871E40041C711 /* key.json */; };
 		49999FD41F57BC2800B8C28F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49999FD31F57BC2800B8C28F /* main.m */; };
 		49999FD71F57BC2800B8C28F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49999FD61F57BC2800B8C28F /* AppDelegate.m */; };
@@ -21,6 +25,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		49310FEF1F5C7086006878E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49999FC71F57BC2800B8C28F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49310FE21F5C7086006878E6;
+			remoteInfo = PriceTracker;
+		};
 		49999FEC1F57BC2800B8C28F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 49999FC71F57BC2800B8C28F /* Project object */;
@@ -37,7 +48,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		49310FF51F5C7086006878E6 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				49310FF11F5C7086006878E6 /* PriceTracker.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		49310FE31F5C7086006878E6 /* PriceTracker.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PriceTracker.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		49310FE51F5C7086006878E6 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		49310FE81F5C7086006878E6 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
+		49310FE91F5C7086006878E6 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		49310FEC1F5C7086006878E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		49310FEE1F5C7086006878E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4932C6871F5871E40041C711 /* key.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = key.json; sourceTree = "<group>"; };
 		49999FCF1F57BC2800B8C28F /* Gemini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gemini.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49999FD31F57BC2800B8C28F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -61,6 +92,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		49310FE01F5C7086006878E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49310FE61F5C7086006878E6 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		49999FCC1F57BC2800B8C28F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -85,12 +124,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49310FE41F5C7086006878E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49310FE51F5C7086006878E6 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49310FE71F5C7086006878E6 /* PriceTracker */ = {
+			isa = PBXGroup;
+			children = (
+				49310FE81F5C7086006878E6 /* TodayViewController.h */,
+				49310FE91F5C7086006878E6 /* TodayViewController.m */,
+				49310FEB1F5C7086006878E6 /* MainInterface.storyboard */,
+				49310FEE1F5C7086006878E6 /* Info.plist */,
+			);
+			path = PriceTracker;
+			sourceTree = "<group>";
+		};
 		49999FC61F57BC2800B8C28F = {
 			isa = PBXGroup;
 			children = (
 				49999FD11F57BC2800B8C28F /* Gemini */,
 				49999FEE1F57BC2800B8C28F /* GeminiTests */,
 				49999FF91F57BC2800B8C28F /* GeminiUITests */,
+				49310FE71F5C7086006878E6 /* PriceTracker */,
+				49310FE41F5C7086006878E6 /* Frameworks */,
 				49999FD01F57BC2800B8C28F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,6 +161,7 @@
 				49999FCF1F57BC2800B8C28F /* Gemini.app */,
 				49999FEB1F57BC2800B8C28F /* GeminiTests.xctest */,
 				49999FF61F57BC2800B8C28F /* GeminiUITests.xctest */,
+				49310FE31F5C7086006878E6 /* PriceTracker.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -154,6 +215,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		49310FE21F5C7086006878E6 /* PriceTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49310FF41F5C7086006878E6 /* Build configuration list for PBXNativeTarget "PriceTracker" */;
+			buildPhases = (
+				49310FDF1F5C7086006878E6 /* Sources */,
+				49310FE01F5C7086006878E6 /* Frameworks */,
+				49310FE11F5C7086006878E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PriceTracker;
+			productName = PriceTracker;
+			productReference = 49310FE31F5C7086006878E6 /* PriceTracker.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		49999FCE1F57BC2800B8C28F /* Gemini */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49999FFF1F57BC2800B8C28F /* Build configuration list for PBXNativeTarget "Gemini" */;
@@ -161,10 +239,12 @@
 				49999FCB1F57BC2800B8C28F /* Sources */,
 				49999FCC1F57BC2800B8C28F /* Frameworks */,
 				49999FCD1F57BC2800B8C28F /* Resources */,
+				49310FF51F5C7086006878E6 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				49310FF01F5C7086006878E6 /* PBXTargetDependency */,
 			);
 			name = Gemini;
 			productName = Gemini;
@@ -216,6 +296,11 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Golden Dog Productions";
 				TargetAttributes = {
+					49310FE21F5C7086006878E6 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = HGZ47EU989;
+						ProvisioningStyle = Automatic;
+					};
 					49999FCE1F57BC2800B8C28F = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = HGZ47EU989;
@@ -251,11 +336,20 @@
 				49999FCE1F57BC2800B8C28F /* Gemini */,
 				49999FEA1F57BC2800B8C28F /* GeminiTests */,
 				49999FF51F57BC2800B8C28F /* GeminiUITests */,
+				49310FE21F5C7086006878E6 /* PriceTracker */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		49310FE11F5C7086006878E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49310FED1F5C7086006878E6 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		49999FCD1F57BC2800B8C28F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -285,6 +379,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		49310FDF1F5C7086006878E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49310FEA1F5C7086006878E6 /* TodayViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		49999FCB1F57BC2800B8C28F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -315,6 +417,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		49310FF01F5C7086006878E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49310FE21F5C7086006878E6 /* PriceTracker */;
+			targetProxy = 49310FEF1F5C7086006878E6 /* PBXContainerItemProxy */;
+		};
 		49999FED1F57BC2800B8C28F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 49999FCE1F57BC2800B8C28F /* Gemini */;
@@ -328,6 +435,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		49310FEB1F5C7086006878E6 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49310FEC1F5C7086006878E6 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		49999FDE1F57BC2800B8C28F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -347,6 +462,30 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		49310FF21F5C7086006878E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = HGZ47EU989;
+				INFOPLIST_FILE = PriceTracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.goldendogproductions.Gemini.PriceTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		49310FF31F5C7086006878E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = HGZ47EU989;
+				INFOPLIST_FILE = PriceTracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.goldendogproductions.Gemini.PriceTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		49999FFD1F57BC2800B8C28F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -514,6 +653,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		49310FF41F5C7086006878E6 /* Build configuration list for PBXNativeTarget "PriceTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49310FF21F5C7086006878E6 /* Debug */,
+				49310FF31F5C7086006878E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		49999FCA1F57BC2800B8C28F /* Build configuration list for PBXProject "Gemini" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

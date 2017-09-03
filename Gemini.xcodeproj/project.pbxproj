@@ -17,6 +17,7 @@
 		49999FE51F57BC2800B8C28F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49999FE31F57BC2800B8C28F /* LaunchScreen.storyboard */; };
 		49999FF01F57BC2800B8C28F /* GeminiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49999FEF1F57BC2800B8C28F /* GeminiTests.m */; };
 		49999FFB1F57BC2800B8C28F /* GeminiUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49999FFA1F57BC2800B8C28F /* GeminiUITests.m */; };
+		49AA5D541F5B8EB7007A043C /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 49AA5D531F5B8EB7007A043C /* AppIcon.appiconset */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		49999FF61F57BC2800B8C28F /* GeminiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeminiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49999FFA1F57BC2800B8C28F /* GeminiUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeminiUITests.m; sourceTree = "<group>"; };
 		49999FFC1F57BC2800B8C28F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49AA5D531F5B8EB7007A043C /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				49999FDC1F57BC2800B8C28F /* DetailViewController.m */,
 				49999FDE1F57BC2800B8C28F /* Main.storyboard */,
 				49999FE11F57BC2800B8C28F /* Assets.xcassets */,
+				49AA5D531F5B8EB7007A043C /* AppIcon.appiconset */,
 				49999FE31F57BC2800B8C28F /* LaunchScreen.storyboard */,
 				49999FE61F57BC2800B8C28F /* Info.plist */,
 				49999FD21F57BC2800B8C28F /* Supporting Files */,
@@ -260,6 +263,7 @@
 				49999FE51F57BC2800B8C28F /* LaunchScreen.storyboard in Resources */,
 				4932C6881F5871E40041C711 /* key.json in Resources */,
 				49999FE21F57BC2800B8C28F /* Assets.xcassets in Resources */,
+				49AA5D541F5B8EB7007A043C /* AppIcon.appiconset in Resources */,
 				49999FE01F57BC2800B8C28F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

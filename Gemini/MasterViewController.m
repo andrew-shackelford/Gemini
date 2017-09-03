@@ -31,8 +31,6 @@ float ethereumAmount = 0.;
     [self refresh:self];
 }
 
-
-
 - (void)updateTableView {
     if (!self.objects) {
         self.objects = [[NSMutableArray alloc] init];
@@ -228,14 +226,30 @@ float ethereumAmount = 0.;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
     NSDate *object = self.objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    NSString *currencyLabel;
+    switch (indexPath.row) {
+        case 0:
+            currencyLabel = @"Bitcoin:";
+            break;
+        case 1:
+            currencyLabel = @"Ethereum:";
+            break;
+        case 2:
+            currencyLabel = @"Cash:";
+            break;
+        default:
+            currencyLabel = @"Unknown:";
+            break;
+    }
+    cell.textLabel.text = currencyLabel;
+    cell.detailTextLabel.text = [object description];
     return cell;
 }
 
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
-    return YES;
+    return NO;
 }
 
 

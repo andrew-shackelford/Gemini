@@ -17,8 +17,6 @@
 		49999FE51F57BC2800B8C28F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49999FE31F57BC2800B8C28F /* LaunchScreen.storyboard */; };
 		49999FF01F57BC2800B8C28F /* GeminiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49999FEF1F57BC2800B8C28F /* GeminiTests.m */; };
 		49999FFB1F57BC2800B8C28F /* GeminiUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49999FFA1F57BC2800B8C28F /* GeminiUITests.m */; };
-		49AA5D511F5B823F007A043C /* PriceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AA5D4F1F5B823F007A043C /* PriceTableViewCell.m */; };
-		49AA5D521F5B823F007A043C /* PriceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49AA5D501F5B823F007A043C /* PriceTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,9 +56,6 @@
 		49999FF61F57BC2800B8C28F /* GeminiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeminiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49999FFA1F57BC2800B8C28F /* GeminiUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeminiUITests.m; sourceTree = "<group>"; };
 		49999FFC1F57BC2800B8C28F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		49AA5D4E1F5B823F007A043C /* PriceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceTableViewCell.h; sourceTree = "<group>"; };
-		49AA5D4F1F5B823F007A043C /* PriceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceTableViewCell.m; sourceTree = "<group>"; };
-		49AA5D501F5B823F007A043C /* PriceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PriceTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,9 +111,6 @@
 				4932C6871F5871E40041C711 /* key.json */,
 				49999FD81F57BC2800B8C28F /* MasterViewController.h */,
 				49999FD91F57BC2800B8C28F /* MasterViewController.m */,
-				49AA5D4E1F5B823F007A043C /* PriceTableViewCell.h */,
-				49AA5D4F1F5B823F007A043C /* PriceTableViewCell.m */,
-				49AA5D501F5B823F007A043C /* PriceTableViewCell.xib */,
 				49999FDB1F57BC2800B8C28F /* DetailViewController.h */,
 				49999FDC1F57BC2800B8C28F /* DetailViewController.m */,
 				49999FDE1F57BC2800B8C28F /* Main.storyboard */,
@@ -265,7 +257,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49AA5D521F5B823F007A043C /* PriceTableViewCell.xib in Resources */,
 				49999FE51F57BC2800B8C28F /* LaunchScreen.storyboard in Resources */,
 				4932C6881F5871E40041C711 /* key.json in Resources */,
 				49999FE21F57BC2800B8C28F /* Assets.xcassets in Resources */,
@@ -295,7 +286,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				49999FD71F57BC2800B8C28F /* AppDelegate.m in Sources */,
-				49AA5D511F5B823F007A043C /* PriceTableViewCell.m in Sources */,
 				49999FDA1F57BC2800B8C28F /* MasterViewController.m in Sources */,
 				49999FD41F57BC2800B8C28F /* main.m in Sources */,
 				49999FDD1F57BC2800B8C28F /* DetailViewController.m in Sources */,

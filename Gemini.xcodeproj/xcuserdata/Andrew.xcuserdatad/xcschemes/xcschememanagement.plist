@@ -9,6 +9,16 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>GeminiWatch (Complication).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>GeminiWatch.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>PriceTracker.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -33,6 +43,11 @@
 			<true/>
 		</dict>
 		<key>49999FF51F57BC2800B8C28F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>49CB04151F5E157100E2D77E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -10,4 +10,8 @@
 
 @interface TodayViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *currencyControl;
+- (IBAction)currencyControlChanged:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+
 @end

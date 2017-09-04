@@ -22,6 +22,7 @@
 		49999FF01F57BC2800B8C28F /* GeminiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49999FEF1F57BC2800B8C28F /* GeminiTests.m */; };
 		49999FFB1F57BC2800B8C28F /* GeminiUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49999FFA1F57BC2800B8C28F /* GeminiUITests.m */; };
 		49AA5D541F5B8EB7007A043C /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 49AA5D531F5B8EB7007A043C /* AppIcon.appiconset */; };
+		49E305831F5E04BC0029EF09 /* PriceFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E305821F5E04BC0029EF09 /* PriceFetcher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,8 @@
 		49999FFA1F57BC2800B8C28F /* GeminiUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeminiUITests.m; sourceTree = "<group>"; };
 		49999FFC1F57BC2800B8C28F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49AA5D531F5B8EB7007A043C /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
+		49E305811F5E04BC0029EF09 /* PriceFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceFetcher.h; sourceTree = "<group>"; };
+		49E305821F5E04BC0029EF09 /* PriceFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceFetcher.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +177,8 @@
 				4932C6871F5871E40041C711 /* key.json */,
 				49999FD81F57BC2800B8C28F /* MasterViewController.h */,
 				49999FD91F57BC2800B8C28F /* MasterViewController.m */,
+				49E305811F5E04BC0029EF09 /* PriceFetcher.h */,
+				49E305821F5E04BC0029EF09 /* PriceFetcher.m */,
 				49999FDB1F57BC2800B8C28F /* DetailViewController.h */,
 				49999FDC1F57BC2800B8C28F /* DetailViewController.m */,
 				49999FDE1F57BC2800B8C28F /* Main.storyboard */,
@@ -391,6 +396,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49E305831F5E04BC0029EF09 /* PriceFetcher.m in Sources */,
 				49999FD71F57BC2800B8C28F /* AppDelegate.m in Sources */,
 				49999FDA1F57BC2800B8C28F /* MasterViewController.m in Sources */,
 				49999FD41F57BC2800B8C28F /* main.m in Sources */,

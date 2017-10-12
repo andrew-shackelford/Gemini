@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) NSString *detailItem;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+- (IBAction)sellButton:(id)sender;
 
 @end
 

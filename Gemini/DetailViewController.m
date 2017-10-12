@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "PriceFetcher.h"
 
 @interface DetailViewController ()
 
@@ -47,4 +48,8 @@
 }
 
 
+- (IBAction)sellButton:(id)sender {
+    PriceFetcher *ourFetcher = [[PriceFetcher alloc] init];
+    [ourFetcher sellCoin:@"BTC"];
+}
 @end

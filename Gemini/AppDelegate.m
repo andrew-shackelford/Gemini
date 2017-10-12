@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "DetailViewController.h"
-#import "CommonCrypto/CommonHMAC.h"
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 

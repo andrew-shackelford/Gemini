@@ -11,6 +11,117 @@
 
 @implementation PriceFetcher
 
+- (NSDictionary*)sellCoin: (NSString*) coinType {
+
+    NSLog(@"we started the sell coin function");
+    NSDictionary *portfolioDict = [self getPortfolio];
+    NSDictionary *ethereumDict = [self getEthereumPrice];
+    NSDictionary *bitcoinDict = [self getBitcoinPrice];
+    float bitcoinSize = [portfolioDict[@"BTC"] floatValue];
+    float ethereumSize = [portfolioDict[@"ETH"] floatValue];
+    float ethereumPrice = [ethereumDict[@"last"] floatValue];
+    float bitcoinPrice = [bitcoinDict[@"last"] floatValue];
+    
+    NSString *priceStr = @"9999.99";
+    NSString *amountStr = @"0.0000001";
+    NSString *symbolStr = @"btcusd";
+    NSArray *optionArr = [NSArray arrayWithObject:@"immediate-or-cancel"];
+    
+    // load api keys
+    NSError *err;
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"key" ofType:@"json"];
+    NSData *keyData = [NSData dataWithContentsOfFile:path];
+    NSDictionary *keyDict = [NSJSONSerialization JSONObjectWithData:keyData options:NSJSONReadingMutableContainers error:&err];
+    NSString *gemini_api_key = keyDict[@"key"];
+    NSString *gemini_api_secret = keyDict[@"secret"];
+    
+    NSLog(@"we loaded the api key");
+    
+    // create request values
+    NSMutableDictionary *req = [[NSMutableDictionary alloc] init];
+    [req setObject:@"/v1/order/new" forKey:@"request"];
+    CFAbsoluteTime nonceTime = CFAbsoluteTimeGetCurrent();
+    NSString *nonce = [NSString stringWithFormat:@"%f", nonceTime];
+    [req setObject:nonce forKey:@"nonce"];
+    [req setObject:@"sell" forKey:@"side"];
+    [req setObject:priceStr forKey:@"price"];
+    [req setObject:amountStr forKey:@"amount"];
+    [req setObject:symbolStr forKey:@"symbol"];
+    [req setObject:@"exchange limit" forKey:@"type"];
+    [req setObject:optionArr forKey:@"options"];
+    
+    NSLog(@"we made the request values");
+    
+    // create base64 values
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:req options:NSJSONWritingPrettyPrinted error:&err];
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    NSString *fixedString = [jsonString stringByReplacingOccurrencesOfString:@"\\/" withString:@"/"];
+    NSData *b64 = [fixedString dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *b64Str = [b64 base64EncodedStringWithOptions:0];
+    
+    NSLog(@"we created the base64 vals");
+    
+    // create signature
+    const char *cKey  = [gemini_api_secret cStringUsingEncoding:NSASCIIStringEncoding];
+    const char *cData = [b64Str cStringUsingEncoding:NSASCIIStringEncoding];
+    unsigned char cHMAC[CC_SHA384_DIGEST_LENGTH];
+    CCHmac(kCCHmacAlgSHA384, cKey, strlen(cKey), cData, strlen(cData), cHMAC);
+    NSData *HMAC = [[NSData alloc] initWithBytes:cHMAC length:sizeof(cHMAC)];
+    
+    NSLog(@"we created the signature");
+    
+    // create hex signature
+    NSUInteger capacity = HMAC.length * 2;
+    NSMutableString *hash = [NSMutableString stringWithCapacity:capacity];
+    const unsigned char *buf = HMAC.bytes;
+    NSInteger i;
+    for (i=0; i<HMAC.length; ++i) {
+        [hash appendFormat:@"%02lX", (unsigned long)buf[i]];
+    }
+    
+    NSLog(@"we created the hex signature");
+    
+    // create http post string
+    NSData *postData = [b64Str dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
+    
+    NSLog(@"we created the http post string");
+    
+    // create request
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:@"https://api.gemini.com/v1/order/new"]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:postData];
+    
+    NSLog(@"we created the request");
+    
+    // set request headers
+    [request setValue:@"text/plain" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"0" forHTTPHeaderField:@"Content-Length"];
+    [request setValue:gemini_api_key forHTTPHeaderField:@"X-GEMINI-APIKEY"];
+    [request setValue:b64Str forHTTPHeaderField:@"X-GEMINI-PAYLOAD"];
+    [request setValue:hash forHTTPHeaderField:@"X-GEMINI-SIGNATURE"];
+    [request setValue:@"no-cache" forHTTPHeaderField:@"Cache-Control"];
+    
+    NSLog(@"we set the request headers");
+    
+    // get data
+    NSData *sellData=[NSURLConnection sendSynchronousRequest:request returningResponse:nil error:&err];
+    NSLog(@"we did the request");
+    NSString *sellStr=[[NSString alloc] initWithData:sellData encoding:NSUTF8StringEncoding];
+    NSMutableDictionary *sellDict = [NSJSONSerialization JSONObjectWithData:sellData options:NSJSONReadingMutableContainers error:&err];
+
+    NSLog(@"we got the request data");
+    
+    // log and return data
+    NSLog(@"sell: %@", sellStr);
+    return sellDict;
+    
+
+}
+
 - (NSDictionary*)getPortfolio {
     
     // load api keys

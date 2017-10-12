@@ -11,5 +11,6 @@
 @interface PriceFetcher : NSObject
 
 - (NSDictionary*) getPrices;
+- (NSDictionary*) sellCoin: (NSString*)coinType;
 
 @end

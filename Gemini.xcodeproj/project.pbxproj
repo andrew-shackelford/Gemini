@@ -12,6 +12,7 @@
 		49310FED1F5C7086006878E6 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49310FEB1F5C7086006878E6 /* MainInterface.storyboard */; };
 		49310FF11F5C7086006878E6 /* PriceTracker.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 49310FE31F5C7086006878E6 /* PriceTracker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4932C6881F5871E40041C711 /* key.json in Resources */ = {isa = PBXBuildFile; fileRef = 4932C6871F5871E40041C711 /* key.json */; };
+		497CC31D1F5F07E5000254B1 /* PriceFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 497CC31C1F5F07E5000254B1 /* PriceFetcher.m */; };
 		49999FD41F57BC2800B8C28F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49999FD31F57BC2800B8C28F /* main.m */; };
 		49999FD71F57BC2800B8C28F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49999FD61F57BC2800B8C28F /* AppDelegate.m */; };
 		49999FDA1F57BC2800B8C28F /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49999FD91F57BC2800B8C28F /* MasterViewController.m */; };
@@ -22,6 +23,7 @@
 		49999FF01F57BC2800B8C28F /* GeminiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49999FEF1F57BC2800B8C28F /* GeminiTests.m */; };
 		49999FFB1F57BC2800B8C28F /* GeminiUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49999FFA1F57BC2800B8C28F /* GeminiUITests.m */; };
 		49AA5D541F5B8EB7007A043C /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 49AA5D531F5B8EB7007A043C /* AppIcon.appiconset */; };
+		49B9B2C31F6042CC006B19A6 /* key.json in Resources */ = {isa = PBXBuildFile; fileRef = 49B9B2C21F6042CC006B19A6 /* key.json */; };
 		49CB041A1F5E157100E2D77E /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49CB04181F5E157100E2D77E /* Interface.storyboard */; };
 		49CB041C1F5E157100E2D77E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49CB041B1F5E157100E2D77E /* Assets.xcassets */; };
 		49CB04231F5E157100E2D77E /* GeminiWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 49CB04221F5E157100E2D77E /* GeminiWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -115,6 +117,8 @@
 		49310FEC1F5C7086006878E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		49310FEE1F5C7086006878E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4932C6871F5871E40041C711 /* key.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = key.json; sourceTree = "<group>"; };
+		497CC31B1F5F07E5000254B1 /* PriceFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceFetcher.h; sourceTree = "<group>"; };
+		497CC31C1F5F07E5000254B1 /* PriceFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceFetcher.m; sourceTree = "<group>"; };
 		49999FCF1F57BC2800B8C28F /* Gemini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gemini.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49999FD31F57BC2800B8C28F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		49999FD51F57BC2800B8C28F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 		49999FFA1F57BC2800B8C28F /* GeminiUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeminiUITests.m; sourceTree = "<group>"; };
 		49999FFC1F57BC2800B8C28F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49AA5D531F5B8EB7007A043C /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
+		49B9B2C21F6042CC006B19A6 /* key.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = key.json; sourceTree = "<group>"; };
 		49CB04161F5E157100E2D77E /* GeminiWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeminiWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49CB04191F5E157100E2D77E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		49CB041B1F5E157100E2D77E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -300,6 +305,9 @@
 			children = (
 				49CB04271F5E157100E2D77E /* InterfaceController.h */,
 				49CB04281F5E157100E2D77E /* InterfaceController.m */,
+				49B9B2C21F6042CC006B19A6 /* key.json */,
+				497CC31B1F5F07E5000254B1 /* PriceFetcher.h */,
+				497CC31C1F5F07E5000254B1 /* PriceFetcher.m */,
 				49CB042A1F5E157100E2D77E /* ExtensionDelegate.h */,
 				49CB042B1F5E157100E2D77E /* ExtensionDelegate.m */,
 				49CB042D1F5E157100E2D77E /* ComplicationController.h */,
@@ -536,6 +544,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49CB04311F5E157100E2D77E /* Assets.xcassets in Resources */,
+				49B9B2C31F6042CC006B19A6 /* key.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +592,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49CB042F1F5E157100E2D77E /* ComplicationController.m in Sources */,
+				497CC31D1F5F07E5000254B1 /* PriceFetcher.m in Sources */,
 				49CB042C1F5E157100E2D77E /* ExtensionDelegate.m in Sources */,
 				49CB04291F5E157100E2D77E /* InterfaceController.m in Sources */,
 			);
@@ -963,6 +973,7 @@
 				49CB04381F5E157100E2D77E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49CB043A1F5E157100E2D77E /* Build configuration list for PBXNativeTarget "GeminiWatch" */ = {
 			isa = XCConfigurationList;
@@ -971,6 +982,7 @@
 				49CB043C1F5E157100E2D77E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

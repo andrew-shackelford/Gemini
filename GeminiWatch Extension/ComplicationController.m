@@ -7,6 +7,7 @@
 //
 
 #import "ComplicationController.h"
+#import "PriceFetcher.h"
 
 @interface ComplicationController ()
 
@@ -35,8 +36,53 @@
 #pragma mark - Timeline Population
 
 - (void)getCurrentTimelineEntryForComplication:(CLKComplication *)complication withHandler:(void(^)(CLKComplicationTimelineEntry * __nullable))handler {
+    CLKComplicationTimelineEntry* entry = nil;
+    NSDate* now = [NSDate date];
+    
+    PriceFetcher *fetcher = [[PriceFetcher alloc] init];
+    NSDictionary *priceDict = [fetcher getPrices];
+    float bitcoinAmount = [[priceDict objectForKey:@"BTC"] floatValue];
+    float ethereumAmount = [[priceDict objectForKey:@"ETH"] floatValue];
+    float cashAmount = [[priceDict objectForKey:@"USD"] floatValue];
+    
+    
+    // Create the template and timeline entry.
+    if (complication.family == CLKComplicationFamilyModularSmall) {
+        // Modular Small Complication
+        CLKComplicationTemplateModularSmallColumnsText* textTemplate =
+        [[CLKComplicationTemplateModularSmallColumnsText alloc] init];
+        textTemplate.row1Column1TextProvider = [CLKSimpleTextProvider textProviderWithText:@"BC"];
+        textTemplate.row1Column2TextProvider = [CLKSimpleTextProvider
+                                                textProviderWithText:[NSString stringWithFormat:@"%.2f", bitcoinAmount]];
+        textTemplate.row2Column1TextProvider = [CLKSimpleTextProvider textProviderWithText:@"EH"];
+        textTemplate.row2Column2TextProvider = [CLKSimpleTextProvider
+                                                textProviderWithText:[NSString stringWithFormat:@"%.2f", ethereumAmount]];
+        
+        // Create the entry.
+        entry = [CLKComplicationTimelineEntry entryWithDate:now
+                                       complicationTemplate:textTemplate];
+    } else if (complication.family == CLKComplicationFamilyModularLarge) {
+        // Modular Large Complication
+        CLKComplicationTemplateModularLargeColumns* textTemplate =
+        [[CLKComplicationTemplateModularLargeColumns alloc] init];
+        textTemplate.row1Column1TextProvider = [CLKSimpleTextProvider textProviderWithText:@"BTC"];
+        textTemplate.row1Column2TextProvider = [CLKSimpleTextProvider
+                                                textProviderWithText:[NSString stringWithFormat:@"$%.2f", bitcoinAmount]];
+        textTemplate.row2Column1TextProvider = [CLKSimpleTextProvider textProviderWithText:@"ETH"];
+        textTemplate.row2Column2TextProvider = [CLKSimpleTextProvider
+                                                textProviderWithText:[NSString stringWithFormat:@"$%.2f", ethereumAmount]];
+        textTemplate.row3Column1TextProvider = [CLKSimpleTextProvider textProviderWithText:@"USD"];
+        textTemplate.row3Column2TextProvider = [CLKSimpleTextProvider
+                                                textProviderWithText:[NSString stringWithFormat:@"$%.2f", cashAmount]];
+        
+        entry = [CLKComplicationTimelineEntry entryWithDate:now complicationTemplate:textTemplate];
+    } else {
+        // ...configure entries for other complication families.
+    }
+    
+    
     // Call the handler with the current timeline entry
-    handler(nil);
+    handler(entry);
 }
 
 - (void)getTimelineEntriesForComplication:(CLKComplication *)complication beforeDate:(NSDate *)date limit:(NSUInteger)limit withHandler:(void(^)(NSArray<CLKComplicationTimelineEntry *> * __nullable entries))handler {

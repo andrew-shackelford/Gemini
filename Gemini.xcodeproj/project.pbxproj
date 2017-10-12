@@ -22,6 +22,8 @@
 		49999FF01F57BC2800B8C28F /* GeminiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49999FEF1F57BC2800B8C28F /* GeminiTests.m */; };
 		49999FFB1F57BC2800B8C28F /* GeminiUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49999FFA1F57BC2800B8C28F /* GeminiUITests.m */; };
 		49AA5D541F5B8EB7007A043C /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 49AA5D531F5B8EB7007A043C /* AppIcon.appiconset */; };
+		49B735F91F8FFEFA00DD3482 /* prices.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49B735F81F8FFEFA00DD3482 /* prices.plist */; };
+		49B735FC1F8FFFC300DD3482 /* PriceWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B735FB1F8FFFC300DD3482 /* PriceWriter.m */; };
 		49CB041A1F5E157100E2D77E /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49CB04181F5E157100E2D77E /* Interface.storyboard */; };
 		49CB041C1F5E157100E2D77E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49CB041B1F5E157100E2D77E /* Assets.xcassets */; };
 		49CB04231F5E157100E2D77E /* GeminiWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 49CB04221F5E157100E2D77E /* GeminiWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -134,6 +136,9 @@
 		49999FFA1F57BC2800B8C28F /* GeminiUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeminiUITests.m; sourceTree = "<group>"; };
 		49999FFC1F57BC2800B8C28F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49AA5D531F5B8EB7007A043C /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
+		49B735F81F8FFEFA00DD3482 /* prices.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = prices.plist; sourceTree = "<group>"; };
+		49B735FA1F8FFFC300DD3482 /* PriceWriter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PriceWriter.h; sourceTree = "<group>"; };
+		49B735FB1F8FFFC300DD3482 /* PriceWriter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PriceWriter.m; sourceTree = "<group>"; };
 		49CB04161F5E157100E2D77E /* GeminiWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeminiWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49CB04191F5E157100E2D77E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		49CB041B1F5E157100E2D77E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -245,6 +250,8 @@
 				4932C6871F5871E40041C711 /* key.json */,
 				49999FD81F57BC2800B8C28F /* MasterViewController.h */,
 				49999FD91F57BC2800B8C28F /* MasterViewController.m */,
+				49B735FA1F8FFFC300DD3482 /* PriceWriter.h */,
+				49B735FB1F8FFFC300DD3482 /* PriceWriter.m */,
 				49999FDB1F57BC2800B8C28F /* DetailViewController.h */,
 				49999FDC1F57BC2800B8C28F /* DetailViewController.m */,
 				49E305811F5E04BC0029EF09 /* PriceFetcher.h */,
@@ -262,6 +269,7 @@
 		49999FD21F57BC2800B8C28F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				49B735F81F8FFEFA00DD3482 /* prices.plist */,
 				49999FD31F57BC2800B8C28F /* main.m */,
 			);
 			name = "Supporting Files";
@@ -501,6 +509,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49999FE51F57BC2800B8C28F /* LaunchScreen.storyboard in Resources */,
+				49B735F91F8FFEFA00DD3482 /* prices.plist in Resources */,
 				4932C6881F5871E40041C711 /* key.json in Resources */,
 				49999FE21F57BC2800B8C28F /* Assets.xcassets in Resources */,
 				49AA5D541F5B8EB7007A043C /* AppIcon.appiconset in Resources */,
@@ -558,6 +567,7 @@
 				49999FD71F57BC2800B8C28F /* AppDelegate.m in Sources */,
 				49999FDA1F57BC2800B8C28F /* MasterViewController.m in Sources */,
 				49999FD41F57BC2800B8C28F /* main.m in Sources */,
+				49B735FC1F8FFFC300DD3482 /* PriceWriter.m in Sources */,
 				49999FDD1F57BC2800B8C28F /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -963,6 +973,7 @@
 				49CB04381F5E157100E2D77E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49CB043A1F5E157100E2D77E /* Build configuration list for PBXNativeTarget "GeminiWatch" */ = {
 			isa = XCConfigurationList;
@@ -971,6 +982,7 @@
 				49CB043C1F5E157100E2D77E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

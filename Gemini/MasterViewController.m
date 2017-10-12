@@ -9,6 +9,7 @@
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 #import "PriceFetcher.h"
+#import "PriceWriter.h"
 
 @interface MasterViewController ()
 
@@ -18,12 +19,14 @@
 @implementation MasterViewController
 
 PriceFetcher *fetcher;
+PriceWriter *writer;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
     fetcher = [[PriceFetcher alloc] init];
+    writer = [[PriceWriter alloc] init];
 
     // create refresh control
     self.refreshControl = [[UIRefreshControl alloc] init];
@@ -98,8 +101,18 @@ PriceFetcher *fetcher;
     [self setToolbarItems:@[flexible, labelItem, flexible] animated:false];
 }
 
+- (void)updatePlist:(NSDictionary *)priceDict {
+    float btcFloat = [[priceDict objectForKey:@"btcPrice"] floatValue];
+    float ethFloat = [[priceDict objectForKey:@"ethPrice"] floatValue];
+    [writer updateBtcPrice:btcFloat];
+    [writer updateEthPrice:ethFloat];
+    NSLog([NSString stringWithFormat:@"btc price is: %f", [writer btcPrice]]);
+    NSLog([NSString stringWithFormat:@"eth price is: %f", [writer ethPrice]]);
+}
+
 - (void)refresh:(id)sender {
     NSDictionary *priceDict = [fetcher getPrices];
+    [self updatePlist: priceDict];
     [self updateTableView:priceDict];
     [self setUpdatedTime];
     [self.refreshControl endRefreshing];

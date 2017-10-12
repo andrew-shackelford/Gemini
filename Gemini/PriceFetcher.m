@@ -137,6 +137,8 @@
     [returnDict setObject:[NSNumber numberWithFloat:ethereumAmount] forKey:@"ETH"];
     [returnDict setObject:[NSNumber numberWithFloat:cashAmount] forKey:@"USD"];
     [returnDict setObject:[NSNumber numberWithFloat:totalAmount] forKey:@"Total"];
+    [returnDict setObject:bitcoinDict[@"last"] forKey:@"btcPrice"];
+    [returnDict setObject:ethereumDict[@"last"] forKey:@"ethPrice"];
     
     return returnDict;
 }
